@@ -52,3 +52,26 @@ def create_chat_bot():
 
 if __name__ == '__main__':
    create_chat_bot()
+
+# Modify tagging.py:
+#
+# Find the first code snippet which is part of the __init__ method for the PosLemmaTagger class.
+# Replace this with the if/else statement.
+# Note: this example is for the English library we used in our example,
+# but feel free to switch this out to another language if you’d prefer.
+#
+# Изменить tagging.py:
+#
+# Найдите первый фрагмент кода, который является частью метода __init__ для класса PosLemmaTagger.
+# Замените это на оператор if /else .
+# Примечание: этот пример предназначен для английской библиотеки,
+# которую мы использовали в нашем примере, но не стесняйтесь переключать ее на другой язык, если хотите.
+
+# Replace this:
+self.nlp = spacy.load(self.language.ISO_639_1.lower())
+
+# With this:
+if self.language.ISO_639_1.lower() == 'en':
+   self.nlp = spacy.load('en_core_web_sm')
+else:
+   self.nlp = spacy.load(self.language.ISO_639_1.lower())
